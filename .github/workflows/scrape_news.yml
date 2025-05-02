@@ -22,13 +22,13 @@ jobs:
 
       - name: Run scraping script
         run: |
-          Rscript scrape_news_uber.R
-          Rscript scrape_news.R
+          Rscript R/scrape_news_uber.R
+          Rscript R/scrape_news.R
 
       - name: Commit changes if any
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git add data/*
-          git diff --cached --quiet || git commit -m "Update news content [CI]"
+          git diff --cached --quiet || git commit -m "Update news content [CI] - $(date '+%Y-%m-%d')"
           git push
