@@ -23,7 +23,7 @@ jobs:
       - name: Run scraping script
         run: |
           Rscript R/scrape_news_uber.R
-          Rscript R/scrape_news.R
+          Rscript R/scrape_news_lyft.R
 
       - name: Commit changes if any
         run: |
